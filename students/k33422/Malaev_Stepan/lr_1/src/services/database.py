@@ -11,6 +11,10 @@ from sqlalchemy.ext.asyncio import (
 
 from .. import config
 
+__all__ = ["Database"]
+
+T = tp.TypeVar("T", bound=tp.Callable[..., tp.Awaitable[tp.Any]])
+
 engine = create_async_engine(
     config.postgres.url,
     echo=False,
@@ -23,8 +27,6 @@ session_maker = async_sessionmaker(
     autoflush=False,
     expire_on_commit=False,
 )
-
-T = tp.TypeVar("T", bound=tp.Callable[..., tp.Awaitable[tp.Any]])
 
 
 class Database:
