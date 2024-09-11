@@ -2,6 +2,7 @@
 name = "lr-1"
 version = "0.1.0"
 description = ""
+package-mode = false
 authors = ["bezstrok <pocandre87@gmail.com>"]
 readme = "README.md"
 
@@ -28,3 +29,14 @@ mypy = "^1.11.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 127
+target-version = "py311"
+show-fixes = true
+
+[tool.mypy]
+ignore_missing_imports = true
+implicit_optional = true
+check_untyped_defs = true
+strict = true
