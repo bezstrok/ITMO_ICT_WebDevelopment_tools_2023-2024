@@ -4,5 +4,6 @@
 from .authorization import *
 from .database import *
 from .user import *
+from .budget import *
 
-__all__ = authorization.__all__ + database.__all__ + user.__all__
+__all__ = authorization.__all__ + database.__all__ + user.__all__ + budget.__all__

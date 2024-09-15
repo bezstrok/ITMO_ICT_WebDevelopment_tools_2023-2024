@@ -9,6 +9,7 @@ __all__ = ["Base"]
 
 class Base(RepositoryMixin, AsyncAttrs, orm.DeclarativeBase):
     __abstract__ = True
+    __page_size__ = 10
 
     metadata = schema.MetaData(
         naming_convention={
