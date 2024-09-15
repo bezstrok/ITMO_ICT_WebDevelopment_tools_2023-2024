@@ -1,9 +1,11 @@
 import typing as tp
 
 from fastapi import APIRouter, Depends, Query
+from sqlalchemy import sql
 
 from .. import schemas, dependencies, models, enums
 from ..services.pagination import Paginator
+from ..services.repository import Repository
 
 
 router = APIRouter(prefix="/transactions", tags=["Transactions"])
@@ -89,3 +91,46 @@ async def delete_transaction(
     await session.commit()
 
     return "OK"
+
+
+@router.get("/{transaction_id}/categories", response_model=schemas.Page[schemas.CategoryGetManyDTO])
+async def get_transaction_categories(
+    user: tp.Annotated[models.User, Depends(dependencies.get_user)],
+    transaction: tp.Annotated[models.Transaction, Depends(dependencies.get_transaction)],
+    page: tp.Annotated[int, Query()] = 1,
+    parent_id: tp.Annotated[tp.Optional[int], Query()] = None,
+    budget_id: tp.Annotated[tp.Optional[int], Query()] = None,
+    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+) -> schemas.Page[schemas.CategoryGetManyDTO]:
+    filters: dict[str, tp.Any] = dict(user=user)
+    if parent_id is not None:
+        filters.update(parent_id=parent_id)
+    if budget_id is not None:
+        filters.update(budget_id=budget_id)
+    limit, offset = Paginator.page_to_limit_offset(models.Category, page=page)
+
+    statement = (
+        sql.select(models.Category)
+        .join(
+            models.TransactionCategory,
+            (
+                (models.TransactionCategory.category_id == models.Category.id)
+                & (models.TransactionCategory.user_id == models.Category.user_id)
+            ),
+        )
+        .where(
+            models.TransactionCategory.transaction_id == transaction.id,  # noqa
+            *Repository.build_django_filters(models.Category, filters),
+        )
+        .limit(limit)
+        .offset(offset)
+    )
+
+    execution = await session.execute(statement)
+    categories = execution.scalars().all()
+
+    return Paginator.paginate(
+        models.Category,
+        list(map(schemas.CategoryGetManyDTO.model_validate, categories)),
+        page=page,
+    )

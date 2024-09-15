@@ -1,10 +1,11 @@
 import typing as tp
 
 from fastapi import APIRouter, Depends, Query
-from sqlalchemy import orm
+from sqlalchemy import orm, sql
 
-from .. import schemas, dependencies, models
+from .. import schemas, dependencies, models, enums
 from ..services.pagination import Paginator
+from ..services.repository import Repository
 
 
 router = APIRouter(prefix="/categories", tags=["Categories"])
@@ -114,4 +115,55 @@ async def delete_category(
     return "OK"
 
 
-# @router.get("/{category_id}/transactions", response_model=schemas.Page[schemas.TransactionGetManyDTO])
+@router.get("/{category_id}/transactions", response_model=schemas.Page[schemas.TransactionGetDTO])
+async def get_category_transactions(
+    category: tp.Annotated[models.Category, Depends(dependencies.get_category)],
+    user: tp.Annotated[models.User, Depends(dependencies.get_user)],
+    page: tp.Annotated[int, Query()] = 1,
+    transaction_type: tp.Annotated[tp.Optional[enums.TransactionType], Query()] = None,
+    orders: tp.Annotated[
+        tp.Optional[
+            tp.Sequence[
+                tp.Literal[
+                    "amount",
+                    "-amount",
+                ]
+            ]
+        ],
+        Query(),
+    ] = None,
+    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+) -> schemas.Page[schemas.TransactionGetDTO]:
+    filters: dict[str, tp.Any] = dict(user=user)
+    if transaction_type is not None:
+        filters.update(transaction_type=transaction_type)
+    if orders is None:
+        orders = []
+    limit, offset = Paginator.page_to_limit_offset(models.Transaction, page=page)
+
+    statement = (
+        sql.select(models.Transaction)
+        .join(
+            models.TransactionCategory,
+            (
+                (models.TransactionCategory.transaction_id == models.Transaction.id)
+                & (models.TransactionCategory.user_id == models.Transaction.user_id)
+            ),
+        )
+        .where(
+            models.TransactionCategory.category_id == category.id,  # noqa
+            *Repository.build_django_filters(models.Transaction, filters),
+        )
+        .limit(limit)
+        .offset(offset)
+        .order_by(*Repository.build_django_orders(models.Transaction, orders))
+    )
+
+    execution = await session.execute(statement)
+    transactions = execution.scalars().all()
+
+    return Paginator.paginate(
+        models.Transaction,
+        list(map(schemas.TransactionGetDTO.model_validate, transactions)),
+        page=page,
+    )

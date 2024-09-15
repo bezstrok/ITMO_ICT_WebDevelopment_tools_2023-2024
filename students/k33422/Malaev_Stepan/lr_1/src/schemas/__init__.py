@@ -7,5 +7,14 @@ from .budget import *
 from .pagination import *
 from .category import *
 from .transaction import *
+from .relationship import *
 
-__all__ = authorization.__all__ + user.__all__ + budget.__all__ + pagination.__all__ + category.__all__ + transaction.__all__
+__all__ = (
+    authorization.__all__
+    + user.__all__
+    + budget.__all__
+    + pagination.__all__
+    + category.__all__
+    + transaction.__all__
+    + relationship.__all__
+)
