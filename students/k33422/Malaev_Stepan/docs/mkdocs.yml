@@ -3,7 +3,7 @@ site_name: Документация
 theme:
   name: material
   palette:
-      primary: black
+    primary: black
 
 nav:
   - Главная: index.md
@@ -12,5 +12,8 @@ nav:
       - Файловая структура: lr_1/files.md
       - База данных: lr_1/database.md
       - Эндпоинты: lr_1/endpoints.md
-#  - Лабораторная работа №2:
+  - Лабораторная работа №2:
+      - Описания задания: lr_2/specification.md
+      - Задание №1: lr_2/task_1.md
+      - Задание №2: lr_2/task_2.md
 #  - Лабораторная работа №3:
