@@ -11,6 +11,6 @@ nav:
       - Описания задания: lr_1/specification.md
       - Файловая структура: lr_1/files.md
       - База данных: lr_1/database.md
-#      - Эндпоинты: lab1/endpoints.md
+      - Эндпоинты: lr_1/endpoints.md
 #  - Лабораторная работа №2:
 #  - Лабораторная работа №3:
