@@ -3,6 +3,7 @@ import functools
 from contextlib import asynccontextmanager
 
 import orjson
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import (
     async_sessionmaker,
     create_async_engine,
@@ -34,12 +35,11 @@ class Database:
     @asynccontextmanager
     async def session(cls) -> tp.AsyncGenerator[AsyncSession, None]:
         async with session_maker() as session:
-            async with session.begin():
-                try:
-                    yield session
-                finally:
-                    if session.in_transaction() and session.is_active:
-                        await session.rollback()
+            try:
+                yield session
+            except SQLAlchemyError:
+                await session.rollback()
+                raise
 
     @classmethod
     def with_session(cls, method: T) -> T:

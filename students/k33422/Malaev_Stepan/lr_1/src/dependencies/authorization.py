@@ -27,8 +27,6 @@ def get_payload(token: tp.Annotated[str, Depends(get_http_bearer_token)]) -> sch
     except jwt.InvalidTokenError:
         raise exceptions.HTTPException(status.HTTP_400_BAD_REQUEST, "Invalid token")
 
-    print(payload)
-
     return schemas.Payload.model_validate(payload)
 
 
