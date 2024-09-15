@@ -3,11 +3,11 @@ import asyncio
 import time
 
 
-async def calculate_sum(start, end) -> int:
+async def calculate_sum(start: int, end: int) -> int:
     return sum(range(start, end))
 
 
-async def main(workers, start, end) -> None:
+async def main(workers: int, start: int, end: int) -> None:
     tasks = []
 
     for i in range(workers):

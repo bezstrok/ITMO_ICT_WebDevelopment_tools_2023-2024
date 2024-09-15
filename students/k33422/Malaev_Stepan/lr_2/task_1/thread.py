@@ -3,15 +3,15 @@ import threading
 import time
 
 
-def calculate_sum(start, end) -> int:
+def calculate_sum(start: int, end: int) -> int:
     return sum(range(start, end))
 
 
-def worker(start, end, results, i) -> None:
+def worker(start: int, end: int, results: list[int], i: int) -> None:
     results[i] = calculate_sum(start, end)
 
 
-def main(workers, start, end) -> None:
+def main(workers: int, start: int, end: int) -> None:
     results = [0] * workers
 
     tasks = []
