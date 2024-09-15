@@ -33,20 +33,21 @@ class Category(mixins.PrimaryKeyIDMixin, base.Base):
     parent_id: orm.Mapped[tp.Optional[int]] = orm.mapped_column(types.BigInteger, nullable=True)
 
     budget: orm.Mapped[tp.Optional["Budget"]] = orm.relationship(
-        back_populates="categories",
-        foreign_keys="[Category.budget_id, Category.user_id]",
+        back_populates="categories", foreign_keys="[Category.budget_id, Category.user_id]", overlaps="categories"
     )
     parent: orm.Mapped[tp.Optional["Category"]] = orm.relationship(
         back_populates="children",
         foreign_keys="[Category.parent_id, Category.user_id]",
         remote_side="[Category.id, Category.user_id]",
+        overlaps="budget,categories",
     )
     children: orm.Mapped[list["Category"]] = orm.relationship(
         back_populates="parent",
         foreign_keys="[Category.parent_id, Category.user_id]",
         remote_side="[Category.parent_id, Category.user_id]",
+        overlaps="budget,categories",
     )
-    user: orm.Mapped["User"] = orm.relationship(back_populates="categories")
+    user: orm.Mapped["User"] = orm.relationship(back_populates="categories", overlaps="budget,children,parent")
     transactions: orm.Mapped[list["Transaction"]] = orm.relationship(
         back_populates="categories",
         secondary="transactions_categories",

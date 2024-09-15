@@ -6,11 +6,12 @@ __all__ = [
     "Payload",
     "AccessTokenDTO",
     "CredentialsDTO",
+    "ChangePasswordDTO",
 ]
 
 
 class Payload(base.Base):
-    id: int
+    sub: int
     typ: str
     exp: datetime
     iat: datetime
@@ -23,3 +24,8 @@ class AccessTokenDTO(base.Base):
 class CredentialsDTO(base.Base):
     username: str
     password: str
+
+
+class ChangePasswordDTO(base.Base):
+    old_password: str
+    new_password: str

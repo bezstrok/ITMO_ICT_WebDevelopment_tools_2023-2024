@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 import bcrypt
 import jwt
 
-from .. import config
+from .. import config, schemas
 
 __all__ = [
     "encode_jwt",
@@ -53,7 +53,7 @@ def create_jwt(
         case _:
             raise ValueError("Invalid token type")
 
-    return encode_jwt(dict(sub=sub, typ=typ, exp=exp, iat=iat))
+    return encode_jwt(schemas.Payload(sub=sub, typ=typ, exp=exp, iat=iat).model_dump())
 
 
 def hash_password(password: str) -> str:

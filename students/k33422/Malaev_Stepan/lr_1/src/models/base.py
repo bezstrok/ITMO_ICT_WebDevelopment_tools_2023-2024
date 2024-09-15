@@ -2,11 +2,12 @@ from sqlalchemy import orm, schema
 from sqlalchemy.ext.asyncio import AsyncAttrs
 
 from ..services.string import Format
+from .mixins import RepositoryMixin
 
 __all__ = ["Base"]
 
 
-class Base(AsyncAttrs, orm.DeclarativeBase):
+class Base(RepositoryMixin, AsyncAttrs, orm.DeclarativeBase):
     __abstract__ = True
 
     metadata = schema.MetaData(

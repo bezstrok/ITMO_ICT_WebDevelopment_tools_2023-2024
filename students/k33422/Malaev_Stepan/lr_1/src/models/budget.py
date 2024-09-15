@@ -20,5 +20,7 @@ class Budget(mixins.CreatedAtMixin, mixins.PrimaryKeyIDMixin, base.Base):
 
     user: orm.Mapped["User"] = orm.relationship(back_populates="budgets")
     categories: orm.Mapped[list["Category"]] = orm.relationship(
-        back_populates="budget", foreign_keys="[Category.budget_id, Category.user_id]"
+        back_populates="budget",
+        foreign_keys="[Category.budget_id, Category.user_id]",
+        overlaps="categories,children,parent,user",
     )
