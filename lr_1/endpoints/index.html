@@ -1,0 +1,1773 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../database/">
+      
+      
+        <link rel="next" href="../../lr_2/specification/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Эндпоинты - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Документация" class="md-header__button md-logo" aria-label="Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Эндпоинты
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Документация" class="md-nav__button md-logo" aria-label="Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Документация
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описания задания
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Файловая структура
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    База данных
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Эндпоинты
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Эндпоинты
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Документация API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Авторизация
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Авторизация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Регистрация пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вход пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление токена доступа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Смена пароля
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Пользователи
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Пользователи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение информации о пользователе
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление пользователя
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Бюджеты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Бюджеты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всех бюджетов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание нового бюджета
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение бюджета по ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление бюджета
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление бюджета
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Категории
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Категории">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всех категорий
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание новой категории
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение категории по ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление категории
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление категории
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Транзакции
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Транзакции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всех транзакций
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание новой транзакции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение транзакции по ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление транзакции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление транзакции
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Связи между категориями и транзакциями
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Связи между категориями и транзакциями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание связи между категорией и транзакцией
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_2/specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описания задания
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_2/task_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание №1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_2/task_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание №2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описания задания
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/containerization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Контейнеризация
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/broker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Брокер сообщений
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Асинхронная очередь задач
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Документация API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Авторизация
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Авторизация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Регистрация пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вход пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление токена доступа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Смена пароля
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Пользователи
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Пользователи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение информации о пользователе
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление пользователя
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Бюджеты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Бюджеты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всех бюджетов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание нового бюджета
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение бюджета по ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление бюджета
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление бюджета
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Категории
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Категории">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всех категорий
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание новой категории
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение категории по ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление категории
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление категории
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Транзакции
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Транзакции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всех транзакций
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание новой транзакции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение транзакции по ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление транзакции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление транзакции
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Связи между категориями и транзакциями
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Связи между категориями и транзакциями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание связи между категорией и транзакцией
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Эндпоинты</h1>
+
+<h3 id="api">Документация API</h3>
+<p>Этот API предоставляет функционал для работы с авторизацией, пользователями, бюджетами, категориями и транзакциями в рамках
+системы управления личными финансами. Он использует <strong>JWT</strong> для аутентификации пользователей и содержит следующие основные
+разделы:</p>
+<ol>
+<li><strong>Авторизация</strong></li>
+<li><strong>Пользователи</strong></li>
+<li><strong>Бюджеты</strong></li>
+<li><strong>Категории</strong></li>
+<li><strong>Транзакции</strong></li>
+<li><strong>Связи между категориями и транзакциями</strong></li>
+</ol>
+<hr />
+<h2 id="1"><strong>1. Авторизация</strong></h2>
+<h3 id="_1"><strong>Регистрация пользователя</strong></h3>
+<p><strong>POST /auth/register</strong></p>
+<p>Регистрирует нового пользователя в системе.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>username</code> (string, required): Имя пользователя.</li>
+<li>
+<p><code>password</code> (string, required): Пароль пользователя.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешная регистрация.
+    <code>json
+    {
+      "id": 1,
+      "username": "string",
+      "email": "string"
+    }</code></li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h3 id="_2"><strong>Вход пользователя</strong></h3>
+<p><strong>POST /auth/login</strong></p>
+<p>Аутентифицирует пользователя и выдает JWT токен.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>username</code> (string, required): Имя пользователя.</li>
+<li>
+<p><code>password</code> (string, required): Пароль пользователя.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешная аутентификация.
+    <code>json
+    {
+      "access_token": "string"
+    }</code></li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h3 id="_3"><strong>Обновление токена доступа</strong></h3>
+<p><strong>POST /auth/refreshToken</strong></p>
+<p>Обновляет токен доступа с использованием <code>refresh_token</code>.</p>
+<ul>
+<li><strong>Параметры запроса:</strong></li>
+<li>
+<p><code>refresh_token</code> (cookie, optional): Токен обновления.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешное обновление токена.
+    <code>json
+    {
+      "access_token": "string"
+    }</code></li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h3 id="_4"><strong>Смена пароля</strong></h3>
+<p><strong>POST /auth/changePassword</strong></p>
+<p>Изменяет пароль пользователя.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>old_password</code> (string, required): Старый пароль.</li>
+<li>
+<p><code>new_password</code> (string, required): Новый пароль.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешная смена пароля.</li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h2 id="2"><strong>2. Пользователи</strong></h2>
+<h3 id="_5"><strong>Получение информации о пользователе</strong></h3>
+<p><strong>GET /user</strong></p>
+<p>Возвращает информацию о текущем пользователе.</p>
+<ul>
+<li><strong>Ответ:</strong></li>
+<li><code>200 OK</code>: Информация о пользователе.
+    <code>json
+    {
+      "id": 1,
+      "username": "string",
+      "email": "string"
+    }</code></li>
+</ul>
+<hr />
+<h3 id="_6"><strong>Обновление пользователя</strong></h3>
+<p><strong>PUT /user</strong></p>
+<p>Обновляет информацию о пользователе.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li>
+<p><code>email</code> (string, required): Новый email пользователя.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Обновленная информация о пользователе.
+    <code>json
+    {
+      "id": 1,
+      "username": "string",
+      "email": "string"
+    }</code></li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h2 id="3"><strong>3. Бюджеты</strong></h2>
+<h3 id="_7"><strong>Получение всех бюджетов</strong></h3>
+<p><strong>GET /budgets</strong></p>
+<p>Возвращает список бюджетов, привязанных к пользователю.</p>
+<ul>
+<li><strong>Параметры запроса:</strong></li>
+<li><code>page</code> (integer, optional): Номер страницы (по умолчанию 1).</li>
+<li><code>start_date</code> (datetime, optional): Начальная дата фильтрации.</li>
+<li><code>end_date</code> (datetime, optional): Конечная дата фильтрации.</li>
+<li>
+<p><code>orders</code> (array, optional): Сортировка по <code>start_date</code>, <code>end_date</code>, <code>amount</code>.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Список бюджетов.
+    <code>json
+    {
+      "count": 1,
+      "next": null,
+      "previous": null,
+      "results": [
+        {
+          "id": 1,
+          "amount": 1000.00,
+          "start_date": "2024-01-01T00:00:00",
+          "end_date": "2024-01-31T23:59:59"
+        }
+      ]
+    }</code></li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h3 id="_8"><strong>Создание нового бюджета</strong></h3>
+<p><strong>POST /budgets</strong></p>
+<p>Создает новый бюджет для пользователя.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>amount</code> (float, required): Сумма бюджета.</li>
+<li><code>start_date</code> (datetime, required): Начальная дата бюджета.</li>
+<li>
+<p><code>end_date</code> (datetime, required): Конечная дата бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Созданный бюджет.
+    <code>json
+    {
+      "id": 1,
+      "amount": 1000.00,
+      "start_date": "2024-01-01T00:00:00",
+      "end_date": "2024-01-31T23:59:59"
+    }</code></li>
+<li><code>422 Validation Error</code>: Ошибка валидации данных.</li>
+</ul>
+<hr />
+<h3 id="id"><strong>Получение бюджета по ID</strong></h3>
+<p><strong>GET /budgets/{budget_id}</strong></p>
+<p>Возвращает бюджет по его ID.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>budget_id</code> (integer, required): ID бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Информация о бюджете.
+    <code>json
+    {
+      "id": 1,
+      "amount": 1000.00,
+      "start_date": "2024-01-01T00:00:00",
+      "end_date": "2024-01-31T23:59:59"
+    }</code></li>
+</ul>
+<hr />
+<h3 id="_9"><strong>Обновление бюджета</strong></h3>
+<p><strong>PUT /budgets/{budget_id}</strong></p>
+<p>Обновляет информацию о бюджете.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>budget_id</code> (integer, required): ID бюджета.</p>
+</li>
+<li>
+<p><strong>Тело запроса:</strong></p>
+</li>
+<li><code>amount</code> (float, required): Новая сумма бюджета.</li>
+<li><code>start_date</code> (datetime, required): Новая начальная дата бюджета.</li>
+<li>
+<p><code>end_date</code> (datetime, required): Новая конечная дата бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Обновленный бюджет.
+    <code>json
+    {
+      "id": 1,
+      "amount": 1500.00,
+      "start_date": "2024-02-01T00:00:00",
+      "end_date": "2024-02-28T23:59:59"
+    }</code></li>
+</ul>
+<hr />
+<h3 id="_10"><strong>Удаление бюджета</strong></h3>
+<p><strong>DELETE /budgets/{budget_id}</strong></p>
+<p>Удаляет бюджет по его ID.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>budget_id</code> (integer, required): ID бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешное удаление бюджета.</li>
+</ul>
+<hr />
+<h2 id="4"><strong>4. Категории</strong></h2>
+<h3 id="_11"><strong>Получение всех категорий</strong></h3>
+<p><strong>GET /categories</strong></p>
+<p>Возвращает список категорий пользователя.</p>
+<ul>
+<li><strong>Параметры запроса:</strong></li>
+<li><code>page</code> (integer, optional): Номер страницы.</li>
+<li><code>parent_id</code> (integer, optional): ID родительской категории.</li>
+<li>
+<p><code>budget_id</code> (integer, optional): ID бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Список категорий.
+    <code>json
+    {
+      "count": 1,
+      "results": [
+        {
+          "id": 1,
+          "title": "Food",
+          "parent_id": null,
+          "budget_id": 1
+        }
+      ]
+    }</code></li>
+</ul>
+<hr />
+<h3 id="_12"><strong>Создание новой категории</strong></h3>
+<p><strong>POST /categories</strong></p>
+<p>Создает новую категорию.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>title</code> (string, required): Название категории.</li>
+<li><code>parent_id</code> (integer, optional): ID родительской категории.</li>
+<li>
+<p><code>budget_id</code> (integer, optional): ID бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Созданная категория.
+    <code>json
+    {
+      "id": 1,
+      "title": "Food",
+      "parent_id": null,
+      "budget_id": 1
+    }</code></li>
+</ul>
+<hr />
+<h3 id="id_1"><strong>Получение категории по ID</strong></h3>
+<p><strong>GET /categories/{category_id}</strong></p>
+<p>Возвращает категорию по ее ID.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>category_id</code> (integer, required): ID категории.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Информация о категории.
+    <code>json
+    {
+      "id": 1,
+      "title": "Food",
+      "parent": null,
+      "children": [],
+      "budget": {
+        "id": 1,
+        "amount": 1000.00
+      }
+    }</code></li>
+</ul>
+<hr />
+<h3 id="_13"><strong>Обновление категории</strong></h3>
+<p><strong>PUT /categories/{category_id}</strong></p>
+<p>Обновляет информацию о категории.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>category_id</code> (integer, required): ID категории.</p>
+</li>
+<li>
+<p><strong>Тело запроса:</strong></p>
+</li>
+<li><code>title</code> (string, required): Новое название категории.</li>
+<li><code>parent_id</code> (integer, optional): ID родительской категории.</li>
+<li>
+<p><code>budget_id</code> (integer, optional): ID бюджета.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Обновленная категория.</li>
+</ul>
+<hr />
+<h3 id="_14"><strong>Удаление категории</strong></h3>
+<p><strong>DELETE /categories/{category_id}</strong></p>
+<p>Удаляет категорию по ее ID.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>category_id</code> (integer, required): ID категории.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешное удаление категории.</li>
+</ul>
+<hr />
+<h2 id="5"><strong>5. Транзакции</strong></h2>
+<h3 id="_15"><strong>Получение всех транзакций</strong></h3>
+<p><strong>GET /transactions</strong></p>
+<p>Возвращает список транзакций пользователя.</p>
+<ul>
+<li><strong>Параметры запроса:</strong></li>
+<li><code>page</code> (integer, optional): Номер страницы.</li>
+<li><code>transaction_type</code> (string, optional): Тип транзакции (<code>deposit</code>, <code>withdraw</code>).</li>
+<li>
+<p><code>orders</code> (array, optional): Сортировка по <code>amount</code>.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Список транзакций.
+    <code>json
+    {
+      "count": 1,
+      "results": [
+        {
+          "id": 1,
+          "amount": 100.00,
+          "transaction_type": "withdraw"
+        }
+      ]
+    }</code></li>
+</ul>
+<hr />
+<h3 id="_16"><strong>Создание новой транзакции</strong></h3>
+<p><strong>POST /transactions</strong></p>
+<p>Создает новую транзакцию.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>amount</code> (float, required): Сумма транзакции.</li>
+<li>
+<p><code>transaction_type</code> (string, required): Тип транзакции (<code>deposit</code>, <code>withdraw</code>).</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Созданная транзакция.
+    <code>json
+    {
+      "id": 1,
+      "amount": 100.00,
+      "transaction_type": "withdraw"
+    }</code></li>
+</ul>
+<hr />
+<h3 id="id_2"><strong>Получение транзакции по ID</strong></h3>
+<p><strong>GET /transactions/{transaction_id}</strong></p>
+<p>Возвращает транзакцию по ее ID.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>transaction_id</code> (integer, required): ID транзакции.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Информация о транзакции.</li>
+</ul>
+<hr />
+<h3 id="_17"><strong>Обновление транзакции</strong></h3>
+<p><strong>PUT /transactions/{transaction_id}</strong></p>
+<p>Обновляет информацию о транзакции.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>transaction_id</code> (integer, required): ID транзакции.</p>
+</li>
+<li>
+<p><strong>Тело запроса:</strong></p>
+</li>
+<li><code>amount</code> (float, required): Новая сумма транзакции.</li>
+<li>
+<p><code>transaction_type</code> (string, required): Новый тип транзакции.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Обновленная транзакция.</li>
+</ul>
+<hr />
+<h3 id="_18"><strong>Удаление транзакции</strong></h3>
+<p><strong>DELETE /transactions/{transaction_id}</strong></p>
+<p>Удаляет транзакцию по ее ID.</p>
+<ul>
+<li><strong>Параметры пути:</strong></li>
+<li>
+<p><code>transaction_id</code> (integer, required): ID транзакции.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешное удаление транзакции.</li>
+</ul>
+<hr />
+<h2 id="6"><strong>6. Связи между категориями и транзакциями</strong></h2>
+<h3 id="_19"><strong>Создание связи между категорией и транзакцией</strong></h3>
+<p><strong>POST /relationships/categoryToTransaction</strong></p>
+<p>Создает связь между категорией и транзакцией.</p>
+<ul>
+<li><strong>Тело запроса:</strong></li>
+<li><code>category_id</code> (integer, required): ID категории.</li>
+<li>
+<p><code>transaction_id</code> (integer, required): ID транзакции.</p>
+</li>
+<li>
+<p><strong>Ответ:</strong></p>
+</li>
+<li><code>200 OK</code>: Успешное создание связи.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

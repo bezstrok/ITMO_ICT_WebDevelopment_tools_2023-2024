@@ -1,0 +1,957 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../specification/">
+      
+      
+        <link rel="next" href="../task_2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Задание №1 - Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cpu" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Документация" class="md-header__button md-logo" aria-label="Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Задание №1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Документация" class="md-nav__button md-logo" aria-label="Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Документация
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_1/specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описания задания
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_1/files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Файловая структура
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_1/database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    База данных
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_1/endpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Эндпоинты
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описания задания
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Задание №1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Задание №1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-threading" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Многопоточность (Threading)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-multiprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Мультипроцессинг (Multiprocessing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-asyncawait" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Кооперативная многозадачность (Async/await)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1000000-100000000" class="md-nav__link">
+    <span class="md-ellipsis">
+      Таблица сравнения для чисел 1,000,000 и 100,000,000
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Таблица сравнения для чисел 1,000,000 и 100,000,000">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание таблицы:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Заключение
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание №2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описания задания
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/containerization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Контейнеризация
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/broker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Брокер сообщений
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr_3/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Асинхронная очередь задач
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-threading" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Многопоточность (Threading)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-multiprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Мультипроцессинг (Multiprocessing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-asyncawait" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Кооперативная многозадачность (Async/await)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1000000-100000000" class="md-nav__link">
+    <span class="md-ellipsis">
+      Таблица сравнения для чисел 1,000,000 и 100,000,000
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Таблица сравнения для чисел 1,000,000 и 100,000,000">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание таблицы:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Заключение
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="cpu">Различия между многопоточностью, мультипроцессингом и кооперативной многозадачностью для вычислений CPU</h1>
+<p>При выполнении вычислительных задач, таких как сложение больших чисел, эффективность работы программы может значительно
+различаться в зависимости от того, какой подход используется: <strong>многопоточность</strong>, <strong>мультипроцессинг</strong> или <strong>кооперативная
+многозадачность</strong> (асинхронное программирование).</p>
+<hr />
+<h2 id="1-threading">1. Многопоточность (Threading)</h2>
+<p>Многопоточность использует несколько потоков внутри одного процесса. Каждый поток разделяет память с другими потоками того же
+процесса. Однако в Python многопоточность ограничена из-за <strong>GIL (Global Interpreter Lock)</strong>, который позволяет только одному
+потоку выполнять код Python на CPU в каждый момент времени. Это значит, что многопоточность в Python полезна для задач
+ввода/вывода, но не для интенсивных вычислений на CPU.</p>
+<ul>
+<li>
+<p><strong>Плюсы:</strong></p>
+<ul>
+<li>Простота использования для задач ввода/вывода.</li>
+<li>Меньшая нагрузка на память, так как потоки разделяют пространство памяти.</li>
+</ul>
+</li>
+<li>
+<p><strong>Минусы:</strong></p>
+<ul>
+<li>Ограничение производительности при вычислениях на CPU из-за GIL.</li>
+<li>Потоки могут мешать друг другу, вызывая конкуренцию за ресурсы (например, переменные).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="2-multiprocessing">2. Мультипроцессинг (Multiprocessing)</h2>
+<p>Мультипроцессинг запускает несколько процессов, каждый из которых выполняется независимо. Каждый процесс имеет своё собственное
+пространство памяти и не разделяет его с другими процессами. Мультипроцессинг обходит ограничение GIL, так как каждый процесс
+получает собственную копию интерпретатора Python.</p>
+<ul>
+<li>
+<p><strong>Плюсы:</strong></p>
+<ul>
+<li>Подходит для вычислительно интенсивных задач, так как процессы работают параллельно и могут использовать несколько ядер
+  процессора.</li>
+<li>Меньше ограничений, связанных с GIL.</li>
+</ul>
+</li>
+<li>
+<p><strong>Минусы:</strong></p>
+<ul>
+<li>Высокие накладные расходы на создание процессов и межпроцессовое взаимодействие.</li>
+<li>Больше использования памяти, так как процессы не разделяют память.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="3-asyncawait">3. Кооперативная многозадачность (Async/await)</h2>
+<p>Асинхронное программирование основано на кооперативной многозадачности, где задачи переключаются друг с другом вручную в момент
+ожидания ввода/вывода. Оно не подходит для вычислительно интенсивных задач на CPU, так как асинхронность не предоставляет
+реальной параллельности. Асинхронные программы полезны для операций с вводом/выводом, таких как работа с сетью или файлами.</p>
+<ul>
+<li>
+<p><strong>Плюсы:</strong></p>
+<ul>
+<li>Эффективно при обработке задач ввода/вывода.</li>
+<li>Очень легкие и быстрые контекстные переключения.</li>
+<li>Меньшие накладные расходы по сравнению с потоками и процессами.</li>
+</ul>
+</li>
+<li>
+<p><strong>Минусы:</strong></p>
+<ul>
+<li>Не подходит для вычислительно интенсивных задач, так как все задачи выполняются последовательно на одном потоке.</li>
+<li>Сложнее в реализации и отладке.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="1000000-100000000">Таблица сравнения для чисел 1,000,000 и 100,000,000</h2>
+<table>
+<thead>
+<tr>
+<th>Подход</th>
+<th>Время выполнения (1,000,000)</th>
+<th>Время выполнения (100,000,000)</th>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Многопоточность</strong></td>
+<td>0.031</td>
+<td>2.563</td>
+<td>Хорошо для задач с вводом/выводом</td>
+<td>GIL ограничивает производительность на CPU</td>
+</tr>
+<tr>
+<td><strong>Мультипроцессинг</strong></td>
+<td>0.172</td>
+<td>0.667</td>
+<td>Полная параллелизация, задействование всех ядер</td>
+<td>Высокие накладные расходы на создание процессов</td>
+</tr>
+<tr>
+<td><strong>Кооперативная многозадачность</strong></td>
+<td>0.023</td>
+<td>2.508</td>
+<td>Эффективно для ввода/вывода</td>
+<td>Непригоден для задач, требующих интенсивных вычислений</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">Описание таблицы:</h3>
+<ol>
+<li><strong>Многопоточность</strong> показывает плохие результаты на вычислительно интенсивных задачах из-за ограничения GIL. Для расчета
+   суммы всех чисел от 1 до 1,000,000 выполнение может занимать больше времени, чем при использовании других подходов, особенно
+   при увеличении объема данных.</li>
+<li><strong>Мультипроцессинг</strong> обеспечивает наилучшую производительность, так как каждое ядро процессора может независимо обрабатывать
+   подзадачи. Этот подход показывает значительное улучшение времени выполнения как для небольших задач (1,000,000 чисел), так и
+   для больших задач (100,000,000 чисел).</li>
+<li><strong>Кооперативная многозадачность (Async)</strong> не подходит для таких вычислений. Хотя она может выполнять задачи эффективно,
+   переключаясь между ними, для задач, требующих вычислительной мощности, асинхронный подход будет медленным, поскольку
+   выполняется на одном потоке.</li>
+</ol>
+<hr />
+<h2 id="_2">Заключение</h2>
+<ul>
+<li><strong>Многопоточность</strong> хорошо подходит для задач, где основное время уходит на ввод/вывод, но не является эффективной для
+  вычислений на CPU.</li>
+<li><strong>Мультипроцессинг</strong> — лучший выбор для вычислительно интенсивных задач, таких как сложение большого количества чисел, так
+  как позволяет использовать все доступные ядра процессора.</li>
+<li><strong>Кооперативная многозадачность</strong> эффективна для ввода/вывода, но не подходит для задач, требующих значительных вычислений.</li>
+</ul>
+<p>Рекомендуется выбирать подход, исходя из характера задачи. Для вычислительных задач всегда предпочтителен мультипроцессинг, а
+для операций с сетью и файловыми системами — асинхронное программирование.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
