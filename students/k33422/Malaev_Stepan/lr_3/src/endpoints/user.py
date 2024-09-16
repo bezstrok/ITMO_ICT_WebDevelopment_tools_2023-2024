@@ -19,7 +19,7 @@ async def get_user(
 async def update_user(
     schema: schemas.UserUpdateDTO,
     user: tp.Annotated[models.User, Depends(dependencies.get_user)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.UserGetDTO:
     await user.update_self(schema.model_dump(), result=True, session=session)
     await session.commit()

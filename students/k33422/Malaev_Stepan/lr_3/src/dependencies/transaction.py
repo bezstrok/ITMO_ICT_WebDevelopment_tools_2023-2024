@@ -13,7 +13,7 @@ __all__ = [
 async def get_transaction(
     transaction_id: int,
     payload: tp.Annotated[schemas.Payload, Depends(authorization.get_access_payload)],
-    session: database.AsyncSession = Depends(database.get_session),
+    session: database.AsyncSession = Depends(database.get_database_session),
 ) -> models.Transaction:
     transaction = await models.Transaction.get_one(dict(id=transaction_id, user_id=payload.sub), session=session)
 

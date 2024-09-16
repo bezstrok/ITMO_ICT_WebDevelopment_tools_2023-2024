@@ -13,7 +13,7 @@ __all__ = [
 async def get_budget(
     budget_id: int,
     payload: tp.Annotated[schemas.Payload, Depends(authorization.get_access_payload)],
-    session: database.AsyncSession = Depends(database.get_session),
+    session: database.AsyncSession = Depends(database.get_database_session),
 ) -> models.Budget:
     budget = await models.Budget.get_one(dict(id=budget_id, user_id=payload.sub), session=session)
 

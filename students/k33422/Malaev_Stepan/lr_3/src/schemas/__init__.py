@@ -8,6 +8,7 @@ from .pagination import *
 from .category import *
 from .transaction import *
 from .relationship import *
+from .task import *
 
 __all__ = (
     authorization.__all__
@@ -17,4 +18,5 @@ __all__ = (
     + category.__all__
     + transaction.__all__
     + relationship.__all__
+    + task.__all__
 )

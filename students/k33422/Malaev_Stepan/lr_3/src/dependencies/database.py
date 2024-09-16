@@ -6,10 +6,10 @@ from ..services.database import Database
 
 __all__ = [
     "AsyncSession",
-    "get_session",
+    "get_database_session",
 ]
 
 
-async def get_session() -> tp.AsyncGenerator[AsyncSession, None]:
+async def get_database_session() -> tp.AsyncGenerator[AsyncSession, None]:
     async with Database.session() as session:
         yield session

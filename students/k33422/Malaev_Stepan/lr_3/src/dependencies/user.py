@@ -12,7 +12,7 @@ __all__ = [
 
 async def get_user(
     payload: tp.Annotated[schemas.Payload, Depends(authorization.get_access_payload)],
-    session: database.AsyncSession = Depends(database.get_session),
+    session: database.AsyncSession = Depends(database.get_database_session),
 ) -> models.User:
     user = await models.User.get_one(dict(id=payload.sub), session=session)
 

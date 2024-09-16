@@ -17,7 +17,7 @@ async def get_categories(
     page: tp.Annotated[int, Query()] = 1,
     parent_id: tp.Annotated[tp.Optional[int], Query()] = None,
     budget_id: tp.Annotated[tp.Optional[int], Query()] = None,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.Page[schemas.CategoryGetManyDTO]:
     filters: dict[str, tp.Any] = dict(user=user)
     if parent_id is not None:
@@ -44,7 +44,7 @@ async def get_categories(
 async def create_category(
     schema: schemas.CategoryCUDTO,
     user: tp.Annotated[models.User, Depends(dependencies.get_user)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.CategoryGetOneDTO:
     data = dict(**schema.model_dump(), user=user)
 
@@ -67,7 +67,7 @@ async def create_category(
 @router.get("/{category_id}", response_model=schemas.CategoryGetOneDTO)
 async def get_category(
     category: tp.Annotated[models.Category, Depends(dependencies.get_category)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.CategoryGetOneDTO:
     category: models.Category = await models.Category.get_one(  # type: ignore
         dict(id=category.id),
@@ -86,7 +86,7 @@ async def get_category(
 async def update_category(
     schema: schemas.CategoryCUDTO,
     category: tp.Annotated[models.Category, Depends(dependencies.get_category)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.CategoryGetOneDTO:
     await category.update_self(schema.model_dump(), session=session)
     await session.commit()
@@ -107,7 +107,7 @@ async def update_category(
 @router.delete("/{category_id}", response_model=str)
 async def delete_category(
     category: tp.Annotated[models.Category, Depends(dependencies.get_category)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> str:
     await category.delete_self(session=session)
     await session.commit()
@@ -132,7 +132,7 @@ async def get_category_transactions(
         ],
         Query(),
     ] = None,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.Page[schemas.TransactionGetDTO]:
     filters: dict[str, tp.Any] = dict(user=user)
     if transaction_type is not None:

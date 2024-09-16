@@ -13,7 +13,7 @@ __all__ = [
 async def get_category(
     category_id: int,
     payload: tp.Annotated[schemas.Payload, Depends(authorization.get_access_payload)],
-    session: database.AsyncSession = Depends(database.get_session),
+    session: database.AsyncSession = Depends(database.get_database_session),
 ) -> models.Category:
     category = await models.Category.get_one(dict(id=category_id, user_id=payload.sub), session=session)
 

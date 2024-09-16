@@ -27,7 +27,7 @@ async def get_transactions(
         ],
         Query(),
     ] = None,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.Page[schemas.TransactionGetDTO]:
     filters: dict[str, tp.Any] = dict(user=user)
     if transaction_type is not None:
@@ -53,7 +53,7 @@ async def get_transactions(
 async def create_transaction(
     schema: schemas.TransactionCUDTO,
     user: tp.Annotated[models.User, Depends(dependencies.get_user)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.TransactionGetDTO:
     data = dict(**schema.model_dump(), user=user)
 
@@ -74,7 +74,7 @@ async def get_transaction(
 async def update_transaction(
     schema: schemas.TransactionCUDTO,
     transaction: tp.Annotated[models.Transaction, Depends(dependencies.get_transaction)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.TransactionGetDTO:
     await transaction.update_self(schema.model_dump(), result=True, session=session)
     await session.commit()
@@ -85,7 +85,7 @@ async def update_transaction(
 @router.delete("/{transaction_id}", response_model=str)
 async def delete_transaction(
     transaction: tp.Annotated[models.Transaction, Depends(dependencies.get_transaction)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> str:
     await transaction.delete_self(session=session)
     await session.commit()
@@ -100,7 +100,7 @@ async def get_transaction_categories(
     page: tp.Annotated[int, Query()] = 1,
     parent_id: tp.Annotated[tp.Optional[int], Query()] = None,
     budget_id: tp.Annotated[tp.Optional[int], Query()] = None,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.Page[schemas.CategoryGetManyDTO]:
     filters: dict[str, tp.Any] = dict(user=user)
     if parent_id is not None:

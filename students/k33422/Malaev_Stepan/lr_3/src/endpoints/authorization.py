@@ -12,7 +12,7 @@ router = APIRouter(prefix="/auth", tags=["Authorization"])
 @router.post("/register", response_model=schemas.UserGetDTO)
 async def register(
     schema: schemas.CredentialsDTO,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.UserGetDTO:
     is_exists = await models.User.exists(dict(username=schema.username), session=session)
     if is_exists:
@@ -35,7 +35,7 @@ async def register(
 async def login(
     schema: schemas.CredentialsDTO,
     response: Response,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.AccessTokenDTO:
     user = await models.User.get_one(dict(username=schema.username), session=session)
     if user is None or not check_password(schema.password, user.hashed_password):
@@ -68,7 +68,7 @@ def refresh_access_token(
 async def change_password(
     schema: schemas.ChangePasswordDTO,
     user: tp.Annotated[models.User, Depends(dependencies.get_user)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> str:
     if not check_password(schema.old_password, user.hashed_password):
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Incorrect password")

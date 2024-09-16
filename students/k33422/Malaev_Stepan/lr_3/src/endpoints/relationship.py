@@ -13,7 +13,7 @@ async def create_relationship_category_to_transaction(
     schema: schemas.CategoryToTransactionDTO,
     payload: tp.Annotated[schemas.Payload, Depends(dependencies.get_access_payload)],
     user: tp.Annotated[models.User, Depends(dependencies.get_user)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> str:
     transaction = await dependencies.get_transaction(schema.transaction_id, payload, session)
     category = await dependencies.get_category(schema.category_id, payload, session)

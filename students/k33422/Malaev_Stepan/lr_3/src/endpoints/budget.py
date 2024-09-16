@@ -31,7 +31,7 @@ async def get_budgets(
         ],
         Query(),
     ] = None,
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.Page[schemas.BudgetGetDTO]:
     filters: dict[str, tp.Any] = dict(user=user)
     if start_date is not None:
@@ -59,7 +59,7 @@ async def get_budgets(
 async def create_budget(
     schema: schemas.BudgetCUDTO,
     user: tp.Annotated[models.User, Depends(dependencies.get_user)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.BudgetGetDTO:
     data = dict(**schema.model_dump(), user=user)
 
@@ -80,7 +80,7 @@ async def get_budget(
 async def update_budget(
     schema: schemas.BudgetCUDTO,
     budget: tp.Annotated[models.Budget, Depends(dependencies.get_budget)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> schemas.BudgetGetDTO:
     await budget.update_self(schema.model_dump(), result=True, session=session)
     await session.commit()
@@ -91,7 +91,7 @@ async def update_budget(
 @router.delete("/{budget_id}", response_model=str)
 async def delete_budget(
     budget: tp.Annotated[models.Budget, Depends(dependencies.get_budget)],
-    session: dependencies.AsyncSession = Depends(dependencies.get_session),
+    session: dependencies.AsyncSession = Depends(dependencies.get_database_session),
 ) -> str:
     await budget.delete_self(session=session)
     await session.commit()
