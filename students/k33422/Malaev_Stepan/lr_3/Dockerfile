@@ -16,4 +16,5 @@ RUN uv pip install --no-cache -r pyproject.toml
 
 COPY src ./src
 COPY migrations ./migrations
+COPY keys ./keys
 COPY alembic.ini .

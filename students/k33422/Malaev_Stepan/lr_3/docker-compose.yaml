@@ -1,3 +1,12 @@
+x-routes: &routes
+  environment:
+    - PG_HOST=postgres
+    - PG_PORT=5432
+    - RD_HOST=redis
+    - RD_PORT=6379
+    - AP_HOST=app
+    - AP_PORT=3030
+
 services:
   postgres:
     container_name: postgres
@@ -31,6 +40,36 @@ services:
       timeout: 5s
     ports:
       - "${RD_PORT}:6379"
+
+  app:
+    container_name: app
+    build: .
+    env_file:
+      - .env
+    <<: *routes
+    command: uvicorn src.main:app --host 0.0.0.0 --port 3030
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "${AP_PORT}:3030"
+
+  worker:
+    container_name: worker
+    build: .
+    env_file:
+      - .env
+    <<: *routes
+    command: taskiq worker src.worker:broker src.tasks
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      app:
+        condition: service_started
 
 volumes:
   pgdata:
