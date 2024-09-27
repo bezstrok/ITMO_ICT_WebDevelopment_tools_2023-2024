@@ -1,0 +1,23 @@
+site_name: Документация
+
+theme:
+  name: material
+  palette:
+    primary: black
+
+nav:
+  - Главная: index.md
+  - Лабораторная работа №1:
+      - Описания задания: lr_1/specification.md
+      - Файловая структура: lr_1/files.md
+      - База данных: lr_1/database.md
+      - Эндпоинты: lr_1/endpoints.md
+  - Лабораторная работа №2:
+      - Описания задания: lr_2/specification.md
+      - Задание №1: lr_2/task_1.md
+      - Задание №2: lr_2/task_2.md
+  - Лабораторная работа №3:
+      - Описания задания: lr_3/specification.md
+      - Контейнеризация: lr_3/containerization.md
+      - Брокер сообщений: lr_3/broker.md
+      - Асинхронная очередь задач: lr_3/queue.md
